@@ -32,4 +32,9 @@ public class NotesController {
     public String deleteNotes(@PathVariable int id){
         return notesService.deleteNote(id);
     }
+
+    @GetMapping("/search")
+    public List<Note> searchNotes(@RequestParam String keyword){
+        return notesService.searchNotes(keyword);
+    }
 }
