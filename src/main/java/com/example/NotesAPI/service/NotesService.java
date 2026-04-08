@@ -41,4 +41,16 @@ public class NotesService {
         if (removed) return "Note Deleted Successfully";
         else return "Note Not Found";
     }
+
+    public List<Note> searchNotes(String keyword){
+        List<Note> result = new ArrayList<>();
+
+        for (Note note : noteList) {
+            if (note.getTitle().toLowerCase().contains(keyword.toLowerCase())) {
+                result.add(note);
+            }
+        }
+
+        return result;
+    }
 }
